@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sesv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<produtos>
+		<ean>5901234123457</ean>
+		<quantidade>4</quantidade>
+	</produtos>
+	<produtos>
+		<ean>3242342344467</ean>
+		<quantidade>3</quantidade>
+	</produtos>
+	<produtos>
+		<ean>2394782379487</ean>
+		<quantidade>5</quantidade>
+	</produtos>
+	<produtos>
+		<ean>9849729347277</ean>
+		<quantidade>6</quantidade>
+	</produtos>
+	<produtos>
+		<ean>2736476328746</ean>
+		<quantidade>2</quantidade>
+	</produtos>
+	<produtos>
+		<ean>8923748762378</ean>
+		<quantidade>1</quantidade>
+	</produtos>
+</sesv>

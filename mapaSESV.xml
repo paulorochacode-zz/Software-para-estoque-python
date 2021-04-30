@@ -1,0 +1,10 @@
+<sesv>
+    <produtos>
+        <ean>5901234123457</ean>
+    		<quantidade>4</quantidade>
+    </produtos>
+    <produtos>
+        <ean>5901234123457</ean>
+        <quantidade>4</quantidade>
+    </produtos>
+</sesv>
