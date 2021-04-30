@@ -26,22 +26,31 @@ def telarecebimento():
     Labelprincipal.place(x=200, y=30)
     
     def abrirxml():
+        filenames1 = filedialog.askopenfilenames(filetypes=[("Arquivo XML", (".xml",)), ("arquivo de texto", ".txt")])
+        print (filenames1)
+        caminhoXML= "r'" + filenames1
+        caminhoXMLstr = str(caminhoXML)
+        print (caminhoXMLstr)
         
+
         def retornaDicionario (xml):
             return xmltodict.parse(xml)
         
         def inserirNoBanco(dicionario):
+            
             sesv1 = "00001"
             #sesv 00001
             banco = sqlite3.connect('sesvtrambit.db')
             cursor = banco.cursor()
-            enderecoraiz = "A00.R00.P00.N00"
+            enderecoraiz = "REC.R00.P00.N00"
             #cursor.execute(" CREATE TABLE '"+sesv1+"' (endereco text,ean integer,quantidade integer)")
             cursor.execute(" INSERT INTO '"+sesv1+"' ('endereco' , 'ean', 'quantidade') VALUES ( '"+enderecoraiz+"', '"+dicionario['ean']+"' , '"+dicionario['quantidade']+"')")
             banco.commit()
 
+        
+        
         if __name__ == '__main__':
-            with open ('sesv.xml') as f:
+            with open (str(r"filenames1,"r")) as f:
                 data = f.read()
             
             dicionario = retornaDicionario(data)
@@ -53,8 +62,7 @@ def telarecebimento():
 
         
         
-        #filenames1 = filedialog.askopenfilenames(filetypes=[("Arquivo XML", (".xml",)), ("arquivo de texto", ".txt")])
-        #print (filenames1)
+        
 
        
 
