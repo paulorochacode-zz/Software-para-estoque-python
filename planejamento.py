@@ -28,7 +28,7 @@ def telarecebimento():
         print (filenames1)
         caminhoXML= str(filenames1[0])
         
-
+        #insere no banco
         def retornaDicionario (xml):
             return xmltodict.parse(xml)
         
@@ -41,7 +41,7 @@ def telarecebimento():
             enderecoraiz = "REC.R00.P00.N00"
             #cursor.execute(" CREATE TABLE '"+sesv1+"' (endereco text,ean integer,quantidade integer)")
             cursor.execute(" INSERT INTO '"+sesv1+"' ('endereco' , 'ean', 'quantidade') VALUES ( '"+enderecoraiz+"', '"+dicionario['ean']+"' , '"+dicionario['quantidade']+"')")
-            #banco.commit()
+            banco.commit()
 
         
         
@@ -53,6 +53,7 @@ def telarecebimento():
             print(dicionario)
             for i in dicionario['sesv']['produtos']:
                 inserirNoBanco(i)
+    
 
     
     def abrirxlsx():
@@ -66,8 +67,8 @@ def telarecebimento():
     botaoXML = Button(Frameuploud, text ="Procurar",command=abrirxml)
     botaoXML.pack(side= "bottom")
 
-    Frameuploud2 = Frame(planejamento, pady=7, padx=7, bg = "Gainsboro", borderwidth=1,relief = "solid")
-    Frameuploud2.place(x=350, y=100)
+    Frameuploud2 = Frame(planejamento, pady=7, padx=10, bg = "Gainsboro", borderwidth=1,relief = "solid")
+    Frameuploud2.place(x=50, y=200)
     LabelFrame = Label(Frameuploud2, text = "Carregar Banco de dados Excel",borderwidth=1, relief="solid",anchor=N,font = ("ArialBlack",10, BOLD),pady=9,padx=7,)
     LabelFrame.pack(side="top")
     botaoExcel = Button(Frameuploud2, text ="Procurar",command=abrirxlsx)
