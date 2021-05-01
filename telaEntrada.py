@@ -2,6 +2,7 @@ from tkinter import*
 from sqlite3 import*
 import sqlite3
 from tkinter.font import BOLD
+from tkinter import ttk
 
 banco = sqlite3.connect('sesvtrambit.db')
 cursor = banco.cursor()

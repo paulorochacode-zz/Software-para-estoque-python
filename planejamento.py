@@ -9,13 +9,11 @@ banco = sqlite3.connect('sesvtrambit.db')
 cursor = banco.cursor()
 
 
-
 planejamento = Tk()
 planejamento.title("Planejamento - Sadic2")
 planejamento.geometry("1000x400+150+150")
 planejamento.configure(background="white")
 planejamento.iconbitmap('images/icon.ico')
-
 
 
 def our_command():
@@ -28,9 +26,7 @@ def telarecebimento():
     def abrirxml():
         filenames1 = filedialog.askopenfilenames(filetypes=[("Arquivo XML", (".xml",)), ("arquivo de texto", ".txt")])
         print (filenames1)
-        caminhoXML= "r'" + filenames1
-        caminhoXMLstr = str(caminhoXML)
-        print (caminhoXMLstr)
+        caminhoXML= str(filenames1[0])
         
 
         def retornaDicionario (xml):
@@ -45,29 +41,18 @@ def telarecebimento():
             enderecoraiz = "REC.R00.P00.N00"
             #cursor.execute(" CREATE TABLE '"+sesv1+"' (endereco text,ean integer,quantidade integer)")
             cursor.execute(" INSERT INTO '"+sesv1+"' ('endereco' , 'ean', 'quantidade') VALUES ( '"+enderecoraiz+"', '"+dicionario['ean']+"' , '"+dicionario['quantidade']+"')")
-            banco.commit()
+            #banco.commit()
 
         
         
         if __name__ == '__main__':
-            with open (str(r"filenames1,"r")) as f:
+            with open (caminhoXML) as f:
                 data = f.read()
             
             dicionario = retornaDicionario(data)
             print(dicionario)
             for i in dicionario['sesv']['produtos']:
                 inserirNoBanco(i)
-
-        
-
-        
-        
-        
-
-       
-
-
-
 
     
     def abrirxlsx():
