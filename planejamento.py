@@ -25,7 +25,6 @@ def our_command():
 
 def telarecebimento():
     
-    print('mamação')
     def abrirxml():
         filenames1 = filedialog.askopenfilenames(filetypes=[("Arquivo XML", (".xml",)), ("arquivo de texto", ".txt")])
         print (filenames1)
