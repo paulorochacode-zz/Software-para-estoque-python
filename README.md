@@ -1,4 +1,4 @@
-<h1>Software-para-estoque-python</h1>
+<h1>Software para estoque python</h1>
 <h1>It's a python software for inventory</h1><hr><br>
 
 <h3>algumas imagens abaixo</h3>
